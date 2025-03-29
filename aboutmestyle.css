@@ -1,0 +1,184 @@
+/* style.css */
+body {
+    background: linear-gradient(135deg, #161616 0%, #2b2a2a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'MunikaHeavy'; 
+    src: url('fonts/munika-heavy.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MunikaMedium'; 
+    src: url('fonts/munika-regular.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MunikaLight'; 
+    src: url('fonts/munika-light.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+.gradient-button {
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    border: 2px solid transparent;
+    color: #fff;
+    border-color: rgb(255, 194, 123);
+    font-family: 'MunikaMedium', sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    bottom: 500px;
+    left: 90px;
+    font-size: 12px;
+    padding: 20px 150px;
+    border-radius: 30px;
+    cursor: pointer;
+    position: absolute;
+    box-shadow: 0 0 10px 2px rgba(255, 195, 65, 0.267);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.gradient-button:hover {
+    border-color: rgb(250, 172, 99); 
+    box-shadow: 0 0 40px 4px rgba(122, 102, 79, 0.7);
+    transform: scale(1.1);
+    border: 3px solid transparent;
+}
+
+.gradient-button:active {
+    transform: scale(1);
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    box-shadow: 0 0 20px 1px rgba(255, 195, 65, 0.548);
+    border-color: rgb(182, 130, 70);
+}
+
+@keyframes changeGradient {
+    0% {
+        background: linear-gradient(to right, rgb(223, 167, 46), rgb(250, 172, 99));
+    }
+    100% {
+        background: linear-gradient(to right, rgb(255, 205, 97), rgb(221, 123, 31));
+    }
+}
+
+.solid-subwp {
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    border: 0px solid transparent;
+    color: #818080;
+    border-color: rgb(187, 122, 48);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: left;
+    left: -10px;
+    bottom: 600px;
+    font-size: 18px;
+    padding: 15px 100px;
+    border-radius: 30px;
+    position: absolute;
+}
+
+.discord-link {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.discord-link:hover {
+    transform: scale(1.1);
+}
+
+.moon {
+    width: 20px;
+    position: absolute;
+    left: 90px;
+    top: 62px;
+    height: 20px;
+    background: linear-gradient(to right, rgb(255, 217, 134), rgb(250, 172, 99));
+    border-radius: 50%;
+    box-shadow: 0 0 20px 1px rgba(255, 195, 65, 0.548);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.about-me {
+    position: absolute;
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    border: 0px solid transparent;
+    color: #ffffff;
+    border-color: rgb(187, 122, 48);
+    font-family: 'MunikaMedium', sans-serif;
+    font-weight: 600;
+    text-align: left;
+    right: 550px;
+    top: 49px;
+    font-size: 18px;
+    padding: 15px 100px;
+    border-radius: 30px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.past-works {
+    position: absolute;
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    border: 0px solid transparent;
+    color: #ffffff;
+    border-color: rgb(187, 122, 48);
+    font-family: 'MunikaMedium', sans-serif;
+    font-weight: 600;
+    text-align: left;
+    right: 400px;
+    top: 49px;
+    font-size: 18px;
+    padding: 15px 100px;
+    border-radius: 30px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prices-for-works {
+    position: absolute;
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    border: 0px solid transparent;
+    color: #ffffff;
+    border-color: rgb(187, 122, 48);
+    font-family: 'MunikaMedium', sans-serif;
+    font-weight: 600;
+    text-align: left;
+    right: 300px;
+    top: 49px;
+    font-size: 18px;
+    padding: 15px 100px;
+    border-radius: 30px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
