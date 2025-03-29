@@ -127,6 +127,7 @@ body {
     border-radius: 30px;
     position: absolute;
     cursor: pointer;
+    z-index: 10;
 }
 
 .past-works {
@@ -145,6 +146,7 @@ body {
     border-radius: 30px;
     position: absolute;
     cursor: pointer;
+    z-index: 10;
 }
 
 .prices-for-works {
@@ -163,6 +165,7 @@ body {
     border-radius: 30px;
     position: absolute;
     cursor: pointer;
+    z-index: 10;
 }
 
 @keyframes pulse {
