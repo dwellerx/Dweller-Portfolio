@@ -2,11 +2,25 @@ from flask import Flask, request, render_template, send_from_directory, render_t
 import os
 import firebase_admin
 from firebase_admin import credentials, firestore
-cred = credentials.Certificate('path/to/your/serviceAccountKey.json')
-firebase_admin.initialize_app(cred)
-db = firestore.client()
-app = Flask(__name__)
+from dotenv import load_dotenv
 
+load_dotenv()  # Only needed locally for development
+
+# Retrieve the Firebase service account key from Heroku environment variable
+firebase_service_account_key = os.getenv('FIREBASE_SERVICE_ACCOUNT_KEY')
+
+# Create a temporary file in Heroku to store the key content
+service_account_file = '/tmp/serviceKey.json'
+
+with open(service_account_file, 'w') as f:
+    f.write(firebase_service_account_key)
+
+cred = credentials.Certificate(service_account_file)
+firebase_admin.initialize_app(cred)
+
+db = firestore.client()
+
+app = Flask(__name__)
 
 @app.route('/intrestedstyle.css')
 def serve_css():
@@ -22,11 +36,10 @@ def index():
 def register():
     email = request.form['email_bar']
     subscribers_ref = db.collection('subscribers')
-    
+
     existing_email = subscribers_ref.where('email', '==', email).get()
     if existing_email:
         return "This email is already registered."
-    
     subscribers_ref.add({
         'email': email
     })
