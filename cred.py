@@ -6,11 +6,13 @@ app = Flask(__name__)
 @app.route('/intrestedstyle.css')
 def serve_css():
     return send_from_directory(os.getcwd(), 'intrestedstyle.css')
+
 @app.route('/')
 def index():
     with open('intrested.html', 'r') as f:
         html_content = f.read()
     return render_template_string(html_content)  
+
 @app.route('/register', methods=['POST'])
 def register():
     email = request.form['email_bar']
