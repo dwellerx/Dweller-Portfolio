@@ -11,7 +11,8 @@ firebase_service_account_key = os.getenv('FIREBASE_SERVICE_ACCOUNT_KEY')
 
 cred = credentials.Certificate(json.loads(firebase_service_account_key))
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://project-saint-default-rtdb.europe-west1.firebasedatabase.app/'
+    'databaseURL': 'https://dwellerportfolio-default-rtdb.europe-west1.firebasedatabase.app/
+'
 })
 
 ref = db.reference('emails/')
