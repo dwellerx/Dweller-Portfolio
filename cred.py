@@ -3,19 +3,12 @@ import os
 import firebase_admin
 from firebase_admin import credentials, firestore
 from dotenv import load_dotenv
+import json
+load_dotenv() 
 
-load_dotenv()  # Only needed locally for development
-
-# Retrieve the Firebase service account key from Heroku environment variable
 firebase_service_account_key = os.getenv('FIREBASE_SERVICE_ACCOUNT_KEY')
 
-# Create a temporary file in Heroku to store the key content
-service_account_file = '/tmp/serviceKey.json'
-
-with open(service_account_file, 'w') as f:
-    f.write(firebase_service_account_key)
-
-cred = credentials.Certificate(service_account_file)
+cred = credentials.Certificate(json.loads(firebase_service_account_key))
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
