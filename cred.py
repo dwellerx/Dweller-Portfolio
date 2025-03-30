@@ -4,18 +4,29 @@ import firebase_admin
 from firebase_admin import credentials, db
 from dotenv import load_dotenv
 import json
+import base64
+import flask
 
-load_dotenv()  # Only needed locally for development
+load_dotenv()
 
-firebase_service_account_key = os.getenv('FIREBASE_SERVICE_ACCOUNT_KEY')
+firebase_service_account_key_base64 = os.environ.get('FIREBASE_SERVICE_ACCOUNT_KEY')
 
-cred = credentials.Certificate(json.loads(firebase_service_account_key))
+if firebase_service_account_key_base64:
+    firebase_service_account_key_json = base64.b64decode(firebase_service_account_key_base64).decode('utf-8')
+    firebase_service_account_key = json.loads(firebase_service_account_key_json)
+else:
+    print("Error: FIREBASE_SERVICE_ACCOUNT_KEY not found in environment variables.")
+    exit()
+
+
+cred = credentials.Certificate(firebase_service_account_key)
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://dwellerportfolio-default-rtdb.europe-west1.firebasedatabase.app/
-'
+    'databaseURL': 'https://dwellerportfolio-default-rtdb.europe-west1.firebasedatabase.app/'
 })
 
 ref = db.reference('emails/')
+
+
 
 app = Flask(__name__)
 
