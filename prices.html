@@ -7,10 +7,21 @@
     <link rel="stylesheet" href="pricesstyle.css">
     <title>About Me</title>
 </head>
+<style>
+    body {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+</style>
 <body>
     <label class="right-aligned" style="position: absolute; left: 40px;bottom: 200px;font-size: 10px;color: rgb(255, 255, 255); transform: rotate(-90deg); font-family: 'Montserrat', sans-serif; text-align: left;font-weight: 500;">—Made from m0neytalker.</label>
     <label class="right-aligned" style="position: absolute; left: 120px;top: 60px;font-size: 20px;color: rgb(255, 255, 255); font-family: 'Montserrat', sans-serif; text-align: left;font-weight: 700;">DWELLER PORTFOLIO</label>
-    <button class="home-page"onclick="window.location.href='welcomepage.html';">HOME PAGE</button>
+    <button class="welcome-page"onclick="window.location.href='welcomepage.html';">HOME PAGE</button>
     <button class="past-works" onclick="window.location.href='past_works.html';">PAST WORKS</button>
     <button class="about-me"onclick="window.location.href='aboutme.html';">ABOUT ME</button>
     <label class="right-aligned" style="position: absolute; left: 900px;top: 250px;font-size: 90px;color: rgba(126, 126, 126, 0.541); font-family: 'MunikaLight', sans-serif; text-align: left;font-weight: lighter;">PRICES I GIVE.</label>

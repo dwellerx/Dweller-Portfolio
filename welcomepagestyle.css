@@ -9,6 +9,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     overflow: hidden;
+    text-align: center;
 }
 
 @font-face {
@@ -40,11 +41,11 @@ body {
     font-family: 'MunikaMedium', sans-serif;
     letter-spacing: 0.5px;
     font-weight: 600;
-    bottom: 500px;
-    left: 90px;
-    font-size: 12px;
-    padding: 20px 150px;
-    border-radius: 30px;
+    bottom: 38vh; 
+    left: 3vw; 
+    font-size: .8vw; 
+    padding: 1.2vh 7vw; 
+    border-radius: 2vw; 
     cursor: pointer;
     position: absolute;
     box-shadow: 0 0 10px 2px rgba(255, 195, 65, 0.267);
@@ -65,109 +66,139 @@ body {
     border-color: rgb(182, 130, 70);
 }
 
-@keyframes changeGradient {
-    0% {
-        background: linear-gradient(to right, rgb(223, 167, 46), rgb(250, 172, 99));
+
+@media (max-width: 1024px) {
+    .gradient-button {
+        font-size: 3vw; 
+        padding: 2vh 12vw; 
+        left: 10vw; 
+        bottom: 12vh; 
     }
-    100% {
-        background: linear-gradient(to right, rgb(255, 205, 97), rgb(221, 123, 31));
+}
+
+@media (max-width: 768px) {
+    .gradient-button {
+        font-size: 4vw;
+        padding: 2vh 15vw; 
+        left: 15vw; 
+        bottom: 15vh; 
     }
 }
 
-.solid-subwp {
-    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
-    border: 0px solid transparent;
-    color: #818080;
-    border-color: rgb(187, 122, 48);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    text-align: left;
-    left: -10px;
-    bottom: 600px;
-    font-size: 18px;
-    padding: 15px 100px;
-    border-radius: 30px;
-    position: absolute;
+@media (max-width: 480px) {
+    .gradient-button {
+        font-size: 5vw; 
+        padding: 3vh 18vw; 
+        left: 20vw;
+        bottom: 18vh; 
+    }
 }
 
-.discord-link {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
 
-.discord-link:hover {
-    transform: scale(1.1);
-}
-
+/* Moon icon */
 .moon {
-    width: 20px;
+    width: 1vw;
+    height: 1vw;
     position: absolute;
-    left: 90px;
-    top: 62px;
-    height: 20px;
+    left: 3vw;
+    top: 4.5vh;
     background: linear-gradient(to right, rgb(255, 217, 134), rgb(250, 172, 99));
     border-radius: 50%;
-    box-shadow: 0 0 20px 1px rgba(255, 195, 65, 0.548);
+    box-shadow: 0 0 1.5vw 0.1vw rgba(255, 195, 65, 0.548);
     animation: pulse 2s infinite ease-in-out;
 }
 
-.about-me {
+/* Navigation buttons */
+.about-me, .past-works, .prices-for-works {
     position: absolute;
     background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
-    border: 0px solid transparent;
     color: #ffffff;
-    border-color: rgb(187, 122, 48);
+    border-radius: 1.5vw;
+    border: 0.1vw solid rgb(255, 194, 123);
+    box-shadow: 0 0 2vw 0.5vw rgb(122, 102, 79);
     font-family: 'MunikaMedium', sans-serif;
     font-weight: 600;
-    text-align: left;
-    right: 550px;
-    top: 49px;
-    font-size: 18px;
-    padding: 15px 100px;
-    border-radius: 30px;
-    position: absolute;
+    text-align: center;
+    font-size: .5vw;
+    padding: .3vw 1vw;
     cursor: pointer;
-    z-index: 10;
+    transition: transform 0.3s ease;
+    z-index: 3;
+}
+
+/* Positions (converted to vw for responsiveness) */
+.about-me {
+    right: 31.5vw;
+    top: 7vh;
 }
 
 .past-works {
-    position: absolute;
-    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
-    border: 0px solid transparent;
-    color: #ffffff;
-    border-color: rgb(187, 122, 48);
-    font-family: 'MunikaMedium', sans-serif;
-    font-weight: 600;
-    text-align: left;
-    right: 400px;
-    top: 49px;
-    font-size: 18px;
-    padding: 15px 100px;
-    border-radius: 30px;
-    position: absolute;
-    cursor: pointer;
-    z-index: 10;
+    right: 25vw;
+    top: 7vh;
 }
 
 .prices-for-works {
-    position: absolute;
-    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
-    border: 0px solid transparent;
-    color: #ffffff;
-    border-color: rgb(187, 122, 48);
-    font-family: 'MunikaMedium', sans-serif;
-    font-weight: 600;
-    text-align: left;
-    right: 300px;
-    top: 49px;
-    font-size: 18px;
-    padding: 15px 100px;
-    border-radius: 30px;
-    position: absolute;
-    cursor: pointer;
-    z-index: 10;
+    right: 20vw;
+    top: 7vh;
 }
 
+.welcome-page {
+    right: 20vw;
+    top: 7vh;
+}
+
+.about-me:hover, .past-works:hover, .prices-for-works:hover .home-page:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-me, .past-works, .prices-for-works, .welcome-page {
+        font-size: 1.8vw;
+        padding: 0.8vw 1.5vw;
+    }
+
+    .moon {
+        width: 3vw;
+        height: 3vw;
+        left: 5vw;
+        top: 6vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-me, .past-works, .prices-for-works, .welcome-page  {
+        font-size: 2vw;
+        padding: 1vw 2vw;
+    }
+
+    .moon {
+        width: 4vw;
+        height: 4vw;
+        left: 5vw;
+        top: 5vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-me, .past-works, .prices-for-works, .welcome-page  {
+        font-size: 3vw;
+        width: 70%;
+        text-align: center;
+        right: 50%;
+        transform: translateX(50%);
+        top: auto;
+    }
+
+    .moon {
+        width: 5vw;
+        height: 5vw;
+        left: 5vw;
+        top: 4vh;
+    }
+}
+
+/* Pulse Animation */
 @keyframes pulse {
     0% {
         transform: scale(1);
