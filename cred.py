@@ -1,17 +1,20 @@
 from flask import Flask, request, render_template, send_from_directory, render_template_string
 import os
 import firebase_admin
-from firebase_admin import credentials, firestore
+from firebase_admin import credentials, db
 from dotenv import load_dotenv
 import json
-load_dotenv() 
+
+load_dotenv()  # Only needed locally for development
 
 firebase_service_account_key = os.getenv('FIREBASE_SERVICE_ACCOUNT_KEY')
 
 cred = credentials.Certificate(json.loads(firebase_service_account_key))
-firebase_admin.initialize_app(cred)
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://project-saint-default-rtdb.europe-west1.firebasedatabase.app/'
+})
 
-db = firestore.client()
+ref = db.reference('emails/')
 
 app = Flask(__name__)
 
@@ -23,17 +26,18 @@ def serve_css():
 def index():
     with open('intrested.html', 'r') as f:
         html_content = f.read()
-    return render_template_string(html_content)  
+    return render_template_string(html_content)
 
 @app.route('/register', methods=['POST'])
 def register():
     email = request.form['email_bar']
-    subscribers_ref = db.collection('subscribers')
-
-    existing_email = subscribers_ref.where('email', '==', email).get()
+    
+    existing_email = ref.order_by_child('email').equal_to(email).get()
+    
     if existing_email:
         return "This email is already registered."
-    subscribers_ref.add({
+    
+    ref.push({
         'email': email
     })
     
