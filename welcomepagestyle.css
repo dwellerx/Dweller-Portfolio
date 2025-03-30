@@ -1,0 +1,359 @@
+/* style.css */
+body {
+    background: linear-gradient(135deg, #161616 0%, #2b2a2a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'MunikaHeavy'; 
+    src: url('fonts/munika-heavy.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MunikaMedium'; 
+    src: url('fonts/munika-regular.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MunikaLight'; 
+    src: url('fonts/munika-light.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #000;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.text-aligned {
+    text-align: left;
+}
+
+.portfolio-intro {
+    position: absolute;
+    left: 3.2%;
+    top: 47%;
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.5;
+    max-width: 80%;
+}
+
+.discord-link {
+    width: 100%;
+    height: auto;
+    max-width: 100px; 
+    display: block;   
+    margin: 0 auto;  
+    position: absolute;
+    left: 22.9%;
+    top: 57%;
+    transition: 0.3s ease;
+}
+
+.discord-link:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .discord-link {
+        max-width: 75px;
+    }
+}
+
+@media (max-width: 480px) {
+    .discord-link {
+        max-width: 60px;  
+    }
+}
+
+
+
+
+.portfolio-credit {
+    position: absolute;
+    left: 3.2%;
+    bottom: 45%;
+    font-size: clamp(10px, 1.5vw, 12px);
+    color: rgb(110, 110, 110);
+}
+
+.image-container {
+    width: 100%;
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    padding: 20px;         
+}
+
+.portfolio-image {
+    max-width: 36%;
+    height: auto;    
+    display: block;    
+}
+
+
+.portfolio-title {
+    position: absolute;
+    left: 3.2%;
+    text-align: left;
+    bottom: 55%;
+    font-size: clamp(24px, 5vw, 50px);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 90%;
+}
+
+.portfolio-signature {
+    position: absolute;
+    left: 3.2%;
+    bottom: 20%;
+    font-size: clamp(10px, 1.5vw, 12px);
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    white-space: nowrap;
+}
+
+.portfolio-logo {
+    position: absolute;
+    left: 4.8%;
+    top: 4.6%;
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 700;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .portfolio-title {
+        bottom: 60%;
+    }
+    .portfolio-intro {
+        top: 35%;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-title {
+        bottom: 65%;
+        font-size: clamp(20px, 6vw, 24px);
+    }
+    .portfolio-intro {
+        top: 40%;
+        max-width: 90%;
+    }
+    .portfolio-signature {
+        bottom: 15%;
+    }
+    .portfolio-credit {
+        bottom: 10%;
+    }
+}
+
+.gradient-button {
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    border: 2px solid transparent;
+    color: #fff;
+    border-color: rgb(255, 194, 123);
+    font-family: 'MunikaMedium', sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    bottom: 38vh; 
+    left: 3vw; 
+    font-size: .8vw; 
+    padding: 1.2vh 7vw; 
+    border-radius: 2vw; 
+    cursor: pointer;
+    position: absolute;
+    box-shadow: 0 0 10px 2px rgba(255, 195, 65, 0.267);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.gradient-button:hover {
+    box-shadow: 0 0 40px 4px rgba(122, 102, 79, 0.7);
+    transform: scale(1.1);
+    border: 3px solid transparent;
+    border-color: rgb(250, 172, 99); 
+}
+
+.gradient-button:active {
+    transform: scale(1);
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    box-shadow: 0 0 20px 1px rgba(255, 195, 65, 0.548);
+    border-color: rgb(182, 130, 70);
+}
+
+
+@media (max-width: 1024px) {
+    .gradient-button {
+        font-size: 3vw; 
+        padding: 2vh 12vw; 
+        left: 10vw; 
+        bottom: 12vh; 
+    }
+}
+
+@media (max-width: 768px) {
+    .gradient-button {
+        font-size: 4vw;
+        padding: 2vh 15vw; 
+        left: 15vw; 
+        bottom: 15vh; 
+    }
+}
+
+@media (max-width: 480px) {
+    .gradient-button {
+        font-size: 5vw; 
+        padding: 3vh 18vw; 
+        left: 20vw;
+        bottom: 18vh; 
+    }
+}
+
+
+/* Moon icon */
+.moon {
+    width: 1vw;
+    height: 1vw;
+    position: absolute;
+    left: 3vw;
+    top: 4.5vh;
+    background: linear-gradient(to right, rgb(255, 217, 134), rgb(250, 172, 99));
+    border-radius: 50%;
+    box-shadow: 0 0 1.5vw 0.1vw rgba(255, 195, 65, 0.548);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Navigation buttons */
+.about-me, .past-works, .prices-for-works {
+    position: absolute;
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    color: #ffffff;
+    border-radius: 1.5vw;
+    border: 0.1vw solid rgb(255, 194, 123);
+    box-shadow: 0 0 2vw 0.5vw rgb(122, 102, 79);
+    font-family: 'MunikaMedium', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: .5vw;
+    padding: .3vw 1vw;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 3;
+}
+
+/* Positions (converted to vw for responsiveness) */
+.about-me {
+    right: 31.5vw;
+    top: 7vh;
+}
+
+.past-works {
+    right: 25vw;
+    top: 7vh;
+}
+
+.prices-for-works {
+    right: 20vw;
+    top: 7vh;
+}
+
+.welcome-page {
+    right: 20vw;
+    top: 7vh;
+}
+
+.about-me:hover, .past-works:hover, .prices-for-works:hover .home-page:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-me, .past-works, .prices-for-works, .welcome-page {
+        font-size: 1.8vw;
+        padding: 0.8vw 1.5vw;
+    }
+
+    .moon {
+        width: 3vw;
+        height: 3vw;
+        left: 5vw;
+        top: 6vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-me, .past-works, .prices-for-works, .welcome-page  {
+        font-size: 2vw;
+        padding: 1vw 2vw;
+    }
+
+    .moon {
+        width: 4vw;
+        height: 4vw;
+        left: 5vw;
+        top: 5vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-me, .past-works, .prices-for-works, .welcome-page  {
+        font-size: 3vw;
+        width: 70%;
+        text-align: center;
+        right: 50%;
+        transform: translateX(50%);
+        top: auto;
+    }
+
+    .moon {
+        width: 5vw;
+        height: 5vw;
+        left: 5vw;
+        top: 4vh;
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}

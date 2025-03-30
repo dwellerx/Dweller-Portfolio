@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pricesstyle.css">
+    <title>About Me</title>
+</head>
+<style>
+    body {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+<body>
+    <label class="right-aligned" style="position: absolute; left: 40px;bottom: 200px;font-size: 10px;color: rgb(255, 255, 255); transform: rotate(-90deg); font-family: 'Montserrat', sans-serif; text-align: left;font-weight: 500;">—Made from m0neytalker.</label>
+    <label class="right-aligned" style="position: absolute; left: 120px;top: 60px;font-size: 20px;color: rgb(255, 255, 255); font-family: 'Montserrat', sans-serif; text-align: left;font-weight: 700;">DWELLER PORTFOLIO</label>
+    <button class="welcome-page"onclick="window.location.href='welcomepage.html';">HOME PAGE</button>
+    <button class="past-works" onclick="window.location.href='past_works.html';">PAST WORKS</button>
+    <button class="about-me"onclick="window.location.href='aboutme.html';">ABOUT ME</button>
+    <label class="right-aligned" style="position: absolute; left: 900px;top: 250px;font-size: 90px;color: rgba(126, 126, 126, 0.541); font-family: 'MunikaLight', sans-serif; text-align: left;font-weight: lighter;">PRICES I GIVE.</label>
+    <label class="right-aligned" style="position: absolute; right: 1520px;bottom: 560px;font-size: 20px;color: rgb(255, 255, 255); font-family: 'Montserrat', sans-serif; text-align: left;font-weight: 700;">The prices can change based on how complex the project is.<br> For more intricate tasks that require additional time, effort,<br> or specialized skills, the cost will be higher.<br> On the other hand, simpler projects may come at a more affordable price.<br> Ultimately, the final cost will depend on the specific details<br> and scope of the work involved.</label>
+    <label class="right-aligned" style="position: absolute; right: 300px;bottom: 580px;font-size: 20px;color: rgb(255, 255, 255); font-family: 'Montserrat', sans-serif; text-align: left;font-weight: 700;">In the end, the pricing will need to be agreed upon through direct messages.<br> Please keep in mind not to undervalue the work,<br> as the cost will reflect the time and effort required for the project.<br> It's important to ensure that the payment is fair<br> and in line with the work being done.</label>
+
+    <img src="images/noise.png" alt="Black And Gold" style="height: 1000px; width: 2300px; position: absolute;left: 0px; top: 300px;">
+    <img src="images/sadgoldenskull.png" alt="Black And Gold" style="height: 800px;position: absolute;left: 1000px; top: 300px;">
+    <div class="moon"></div>
+    <script>
+        const svgElement = document.getElementById('discord-link-svg');
+        svgElement.addEventListener('click', function() {
+            alert('SVG clicked!');
+        });
+    </script>
+</body>
+</html>

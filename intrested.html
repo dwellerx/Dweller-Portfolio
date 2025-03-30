@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="intrestedstyle.css">
+    <title>Get Started</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <nav class="nav-container">
+            <div class="nav-buttons">
+                <button class="welcome-page" onclick="window.location.href='welcomepage.html';">HOME PAGE</button>
+                <button class="past-works" onclick="window.location.href='past_works.html';">PAST WORKS</button>
+                <button class="prices-for-works" onclick="window.location.href='prices.html';">PRICES</button>
+            </div>
+            <div class="logo">DWELLER PORTFOLIO (NEWS LETTER)</div>
+        </nav>
+        
+        <main class="main-container">
+            <div class="form-card">
+                <form action="/register" method="POST"> 
+                    <div class="form-group">
+                        <label class="form-label">EMAIL ADDRESS</label>
+                        <div class="input-container">
+                            <input class="input-field" type="email" id="email_bar" name="email_bar" placeholder="example@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="remember-me">
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="remember-text">Remember me</span>
+                    </div>
+                    
+                    <button class="login-btn" type="submit">REGISTER</button>
+                </form>
+            </div>
+            <div class="remember-me">
+                <span class="remember-text">This is my newsletter, add your email to be notified when I update my website.</span>
+            </div>
+        </main>
+        
+        <div class="moon-decoration"></div>
+    </div>
+</body>
+</html>
