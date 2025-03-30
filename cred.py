@@ -1,7 +1,12 @@
 from flask import Flask, request, render_template, send_from_directory, render_template_string
 import os
-
+import firebase_admin
+from firebase_admin import credentials, firestore
+cred = credentials.Certificate('path/to/your/serviceAccountKey.json')
+firebase_admin.initialize_app(cred)
+db = firestore.client()
 app = Flask(__name__)
+
 
 @app.route('/intrestedstyle.css')
 def serve_css():
@@ -16,6 +21,15 @@ def index():
 @app.route('/register', methods=['POST'])
 def register():
     email = request.form['email_bar']
+    subscribers_ref = db.collection('subscribers')
+    
+    existing_email = subscribers_ref.where('email', '==', email).get()
+    if existing_email:
+        return "This email is already registered."
+    
+    subscribers_ref.add({
+        'email': email
+    })
     
     print(f"Registered email: {email}")
     
