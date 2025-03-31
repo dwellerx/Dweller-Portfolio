@@ -4,22 +4,20 @@ import firebase_admin
 from firebase_admin import credentials, db
 from dotenv import load_dotenv
 import json
-import base64
 
 # Load environment variables
 load_dotenv()
 
-# Decode the Firebase service account key from Base64
-firebase_service_account_key_base64 = os.getenv('FIREBASE_SERVICE_ACCOUNT_KEY')
+# Get the Firebase service account key JSON string from an environment variable
+firebase_service_account_key_json = os.getenv('FIREBASE_SERVICE_ACCOUNT_KEY')
 
-if not firebase_service_account_key_base64:
+if not firebase_service_account_key_json:
     print("Error: FIREBASE_SERVICE_ACCOUNT_KEY not found in environment variables.")
     exit()
 
 try:
-    firebase_service_account_key_json = base64.b64decode(firebase_service_account_key_base64).decode('utf-8')
     firebase_service_account_key = json.loads(firebase_service_account_key_json)
-except Exception as e:
+except json.JSONDecodeError as e:
     print(f"Error decoding Firebase credentials: {e}")
     exit()
 
