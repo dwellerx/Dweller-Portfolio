@@ -123,7 +123,7 @@ body, html {
 }
 
 .portfolio-image {
-    width: 100%;
+    width: 70%;
     height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
@@ -135,25 +135,34 @@ body, html {
 
 .video-showcase {
     margin: 50px 0;
-    padding-top: 220px;
+    padding-top: 20px;
 }
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr); /* Changed from minmax(100px, 1fr) */
+    gap: 20px; /* Added a reasonable gap */
+    width: 100%; /* Ensure it takes full width */
+    max-width: 1200px; /* Optional: set a max width */
+    
+}
+
+.video-item {
+    display: flex;
+    justify-content: center; /* Center the video horizontally */
 }
 
 .video-item video {
-    width: 100%;
+    width: 90%; /* Reduced from 50% to allow for gap */
+    max-width: 500px; /* Optional: prevent videos from getting too large */
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 1px rgba(255, 188, 88, 0.384);
 }
 
 .reviews-section {
     margin: 100px 0 300px;
-    padding-top: 220px;
+    padding-bottom: -10px;
 }
 
 .reviews-title {

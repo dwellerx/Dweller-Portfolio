@@ -64,7 +64,7 @@ def send_email_welcome(recipient_email):
     api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
 
     email_data = {
-        "sender": {"name": "Dweller", "email": "dweller@gmail.com"},
+        "sender": {"name": "Dweller", "email": "dwellerxteam@gmail.com"},
         "to": [{"email": recipient_email, "name": "User"}],  
         "subject": "Newsletter Welcome Email",
         "htmlContent": "<h1>Welcome!</h1><p>This is an automated email. Thanks for subrscribing to my newletter!.</p>"

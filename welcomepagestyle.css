@@ -91,27 +91,6 @@ body {
     }
 }
 
-
-.nav-btn {
-    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
-    color: #ffffff;
-    border-radius: 15px;
-    border: 1px solid rgb(255, 194, 123);
-    box-shadow: 0 0 20px 5px rgb(122, 102, 79);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: clamp(10px, 1.5vw, 14px);
-    padding: 8px 15px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    white-space: nowrap;
-}
-
-.nav-btn:hover {
-    transform: scale(1.1);
-}
-
-
 .portfolio-credit {
     position: absolute;
     left: 3.2%;
@@ -121,27 +100,74 @@ body {
 }
 
 .image-container {
-    width: 100%;
-    position: absolute;
-    top: 5vw;
-    max-width: 600px;
-    margin: auto;
+    position: relative;
+    width: 90%;  
+    left: 25%;
+    top: 5%;
+    max-width: 900px;  
+    margin: 2rem auto;  
     text-align: center;
-    left: 55vw;
+    aspect-ratio: 16/9;  
 }
 
 .portfolio-image {
-    width: 40vw;
-    max-width: 900px;
-    height: auto;
+    width: 100%;  
+    height: auto; 
+    object-fit: contain;
+    transition: transform 0.3s ease;  
 }
 
-@media (max-width: 600px) {
-    .portfolio-image {
-        width: 80%;
+/* Hover effect for desktop */
+
+@media (hover: hover) {
+    .portfolio-image:hover {
+        transform: scale(1.02);
     }
 }
 
+/* Responsive adjustments */
+
+@media (max-width: 1600px) {
+    .image-container {
+        width: 30%;
+        top: 20%;
+        position: relative;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .image-container {
+        width:0%;
+        position: relative;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 992px) {
+    .image-container {
+        width: 0%;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        width: 0%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 576px) {
+    .image-container {
+        width: 0%;
+        padding: 0 1rem;
+    }
+    
+    .portfolio-image {
+        width: 100%;  /* Show full image on mobile */
+    }
+}
 
 .portfolio-title {
     position: absolute;
@@ -275,31 +301,14 @@ body {
     animation: pulse 2s infinite ease-in-out;
 }
 
-/* Navigation buttons */
-.about-me, .past-works, .prices-for-works {
-    position: absolute;
-    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
-    color: #ffffff;
-    border-radius: 1.5vw;
-    border: 0.1vw solid rgb(255, 194, 123);
-    box-shadow: 0 0 2vw 0.5vw rgb(122, 102, 79);
-    font-family: 'MunikaMedium', sans-serif;
-    font-weight: 600;
-    text-align: center;
-    font-size: .5vw;
-    padding: .3vw 1vw;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    z-index: 3;
-}
 
 /* Navigation Buttons - Responsive Version */
 .nav-buttons-container {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 50px;
+    right: 320px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: flex-end;
     z-index: 10;
@@ -310,12 +319,12 @@ body {
     color: #ffffff;
     border-radius: 15px;
     border: 1px solid rgb(255, 194, 123);
-    box-shadow: 0 0 10px 2px rgba(122, 102, 79, 0.7);
+    box-shadow: 0 0 40px 2px rgba(122, 102, 79, 0.7);
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     text-align: center;
-    font-size: 14px;
-    padding: 8px 15px;
+    font-size: 12px;
+    padding: 8px 30px;
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
@@ -325,40 +334,34 @@ body {
     transform: scale(1.05);
     box-shadow: 0 0 15px 5px rgba(122, 102, 79, 0.9);
 }
-
-/* Responsive Adjustments */
 @media (max-width: 1024px) {
+    
     .nav-buttons-container {
-        gap: 8px;
+        position: relative;
+        top: auto;
+        right: auto;
+        justify-content: center;
+        margin: 15px auto;
+        padding: 0 15px;
     }
+
+}
+
+@media (max-width: 768px) {
     .nav-button {
         font-size: 13px;
         padding: 7px 12px;
     }
 }
 
-@media (max-width: 768px) {
-    .nav-buttons-container {
-        position: static;
-        justify-content: center;
-        margin: 15px auto;
-        padding: 0 15px;
-    }
-    .nav-button {
-        font-size: 12px;
-        padding: 6px 10px;
-        white-space: normal;
-    }
-}
-
 @media (max-width: 480px) {
-    .nav-buttons-container {
-        gap: 6px;
-    }
     .nav-button {
         font-size: 11px;
         padding: 5px 8px;
         border-radius: 12px;
+    }
+    .nav-buttons-container {
+        gap: 6px;
     }
 }
 
