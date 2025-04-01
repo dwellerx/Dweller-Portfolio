@@ -5,63 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="past_workstyle.css">
-    <title>About Me</title>
+    <title>Past Works</title>
+    <style>
+        body {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
-<style>
-  body {
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-  }
-  @keyframes fadeIn {
-      to {
-          opacity: 1;
-      }
-  }
-</style>
 <body>
-    <label class="right-aligned" style="position: absolute; left: 90px;bottom: 700px;font-size: 50px;color: rgb(255, 255, 255);font-family: 'Munika', sans-serif; text-align: left;font-weight: 700;">#PAST WORKS AND PROJECTS. <br>ABOUT ME.</label>
-    <label class="right-aligned" style="position: absolute; left: 40px;bottom: 200px;font-size: 10px;color: rgb(255, 255, 255); transform: rotate(-90deg); font-family: 'Montserrat', sans-serif; text-align: left;font-weight: 500;"> ←— SCROLL DOWN —Made from m0neytalker.</label>
-    <label class="right-aligned" style="position: absolute; left: 120px;top: 60px;font-size: 20px;color: rgb(255, 255, 255); font-family: 'Montserrat', sans-serif; text-align: left;font-weight: 700;">DWELLER PORTFOLIO</label>
-    <label class="right-aligned" style="position: absolute; left: 94px;bottom: 550px;font-size: 20px;color: rgb(255, 255, 255); font-family: 'MunikaLight', sans-serif; text-align: left;font-weight: 700;">Here are some of the projects and works I've created over time.<br> Each one represents a different challenge I took on, showcasing my skills, creativity, and problem-solving abilities.<br> From small experiments to more complex builds,<br> these projects reflect my progress and dedication.<br> Take a look and see what I’ve been working on.</label>
-    <button class="welcome-page"  onclick="window.location.href='welcomepage.html';" >HOME PAGE</button>
-    <button class="about-me" onclick="window.location.href='aboutme.html';">ABOUT ME</button>
-    <button class="prices-for-works" onclick="window.location.href='prices.html';" >PRICES</button>
-    <img src="images/noFilter.png" alt="Black And Gold" style="height: 100px;position: absolute; left: 220px; top: 910px;">
-    <img src="images/bathtubonstilts.png" alt="Black And Gold" style="height: 100px;position: absolute; left: 220px; bottom: -650px;">
-    <label class="right-aligned" style="position: absolute; left: 350px;bottom: -650px;font-size: 20px;color: rgb(255, 255, 255); font-family: 'MunikaLight', sans-serif; text-align: left;font-weight: 700;">Definitely 5/5, I love ur scripts,<br> you get them done relatively quickly in relation to the time and they're often great,<br> and your very understanding about price.</label>
-    <label class="right-aligned" style="position: absolute; left: 350px;bottom: -570px;font-size: 20px;color: rgb(255, 255, 255); font-family: 'MunikaLight', sans-serif; text-align: left;font-weight: 700;">⭐⭐⭐⭐⭐</label>
-    
-    <img src="images/eres.png" alt="Black And Gold" style="height: 100px;position: absolute; left: 1220px; bottom: -650px;">
-    <label class="right-aligned" style="position: absolute; left: 1350px;bottom: -650px;font-size: 20px;color: rgb(255, 255, 255); font-family: 'MunikaLight', sans-serif; text-align: left;font-weight: 700;">5/5 Since your scripts are high quality and they're easy to understand.<br> About the dead lines you always respect them.<br>Had a great experience overall.</label>
-    <label class="right-aligned" style="position: absolute; left: 1350px;bottom: -570px;font-size: 20px;color: rgb(255, 255, 255); font-family: 'MunikaLight', sans-serif; text-align: left;font-weight: 700;">⭐⭐⭐⭐⭐</label>
-    
-    <div class="moon"></div>
-    <img src="images/torusofdoom.png" alt="Black And Gold" style="height: 1500px;position: absolute; right: 0px; top: 10px;">
-    <video width="460" height="360" controls style="position: absolute; bottom: 90px; left: 350px;"">
-        <source src="videos/clip1.mp4" type="video/mp4"">
-      Your browser does not support the video tag.
-      </video>
-    <video width="460" height="360" controls style="position: absolute; bottom: 90px; right: 1200px;"">
-        <source src="videos/clip2.mp4" type="video/mp4"">
-      Your browser does not support the video tag.
-      </video>
-    <video width="460" height="360" controls style="position: absolute; bottom: -350px; left: 350px;"">
-        <source src="videos/clip3.mp4" type="video/mp4"">
-      Your browser does not support the video tag.
-      </video>
-    <video width="460" height="360" controls style="position: absolute; bottom: -350px; right: 1200px;"">
-        <source src="videos/clip4.mp4" type="video/mp4"">
-      Your browser does not support the video tag.
-      </video>
-    
-    <label class="right-aligned" style="position: absolute; left: 90px;bottom: -450px;font-size: 25px;color: rgb(255, 255, 255);font-family: 'Munika', sans-serif; text-align: left;font-weight: 700;">REVIEWS (Still Getting Some) </label>
-    <div class="moon"></div>
-    <script>
-        const svgElement = document.getElementById('discord-link-svg');
-        svgElement.addEventListener('click', function() {
-            alert('SVG clicked!');
-        });
-    </script>
-</body>  
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="moon"></div>
+            <h1 class="logo">DWELLER PORTFOLIO</h1>
+            <div class="nav-buttons-container">
+              <button class="nav-button" onclick="window.location.href='welcomepage.html';">HOME PAGE</button>
+              <button class="nav-button" onclick="window.location.href='aboutme.html';">ABOUT ME</button>
+              <button class="nav-button" onclick="window.location.href='prices.html';">PRICES</button>
+          </div>
+            <div class="signature">←— SCROLL DOWN —Made from m0neytalker.</div>
+        </header>
 
+        <!-- Main Content -->
+        <main class="content">
+            <section class="intro-section">
+                <h2 class="section-title">#PAST WORKS AND PROJECTS. <br>ABOUT ME.</h2>
+                <p class="section-description">
+                    Here are some of the projects and works I've created over time.<br>
+                    Each one represents a different challenge I took on, showcasing my skills, creativity, and problem-solving abilities.<br>
+                    From small experiments to more complex builds, these projects reflect my progress and dedication.<br>
+                    Take a look and see what I've been working on.
+                </p>
+            </section>
+
+
+            <!-- Video Showcase -->
+            <section class="video-showcase">
+                <div class="video-grid">
+                    <div class="video-item">
+                        <video controls>
+                            <source src="videos/clip1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-item">
+                        <video controls>
+                            <source src="videos/clip2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-item">
+                        <video controls>
+                            <source src="videos/clip3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-item">
+                        <video controls>
+                            <source src="videos/clip4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="reviews-section">
+                <h2 class="reviews-title">REVIEWS (Still Getting Some)</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <img src="images/eres.png" alt="Reviewer avatar" class="review-avatar">
+                        <div class="review-content">
+                            <p class="review-text">
+                                5/5 Since your scripts are high quality and they're easy to understand.<br>
+                                About the dead lines you always respect them.<br>
+                                Had a great experience overall.
+                            </p>
+                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <img src="images/bathtubonstilts.png" alt="Reviewer avatar" class="review-avatar">
+                        <div class="review-content">
+                            <p class="review-text">
+                                Definitely 5/5, I love ur scripts,<br>
+                                you get them done relatively quickly in relation to the time and they're often great,<br>
+                                and your very understanding about price.
+                            </p>
+                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Background Elements -->
+        <div class="background-elements">
+            <img src="images/torusofdoom.png" alt="Decorative background" class="bg-decoration">
+        </div>
+    </div>
+</body>
 </html>

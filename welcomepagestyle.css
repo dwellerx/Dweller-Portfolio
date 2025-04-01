@@ -92,6 +92,24 @@ body {
 }
 
 
+.nav-btn {
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid rgb(255, 194, 123);
+    box-shadow: 0 0 20px 5px rgb(122, 102, 79);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: clamp(10px, 1.5vw, 14px);
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    transform: scale(1.1);
+}
 
 
 .portfolio-credit {
@@ -105,18 +123,23 @@ body {
 .image-container {
     width: 100%;
     position: absolute;
-    left: 20%;
-    top: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;     
-    padding: 20px;         
+    top: 5vw;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    left: 55vw;
 }
 
 .portfolio-image {
-    max-width: 36%;
-    height: auto;    
-    display: block;    
+    width: 40vw;
+    max-width: 900px;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .portfolio-image {
+        width: 80%;
+    }
 }
 
 
@@ -270,75 +293,101 @@ body {
     z-index: 3;
 }
 
-/* Positions (converted to vw for responsiveness) */
-.about-me {
-    right: 31.5vw;
-    top: 7vh;
+/* Navigation Buttons - Responsive Version */
+.nav-buttons-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    z-index: 10;
 }
 
-.past-works {
-    right: 25vw;
-    top: 7vh;
+.nav-button {
+    background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
+    color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid rgb(255, 194, 123);
+    box-shadow: 0 0 10px 2px rgba(122, 102, 79, 0.7);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-.prices-for-works {
-    right: 20vw;
-    top: 7vh;
+.nav-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px rgba(122, 102, 79, 0.9);
 }
 
-.welcome-page {
-    right: 20vw;
-    top: 7vh;
-}
-
-.about-me:hover, .past-works:hover, .prices-for-works:hover .home-page:hover {
-    transform: scale(1.1);
-}
-
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
-    .about-me, .past-works, .prices-for-works, .welcome-page {
-        font-size: 1.8vw;
-        padding: 0.8vw 1.5vw;
+    .nav-buttons-container {
+        gap: 8px;
     }
-
-    .moon {
-        width: 3vw;
-        height: 3vw;
-        left: 5vw;
-        top: 6vh;
+    .nav-button {
+        font-size: 13px;
+        padding: 7px 12px;
     }
 }
 
 @media (max-width: 768px) {
-    .about-me, .past-works, .prices-for-works, .welcome-page  {
-        font-size: 2vw;
-        padding: 1vw 2vw;
+    .nav-buttons-container {
+        position: static;
+        justify-content: center;
+        margin: 15px auto;
+        padding: 0 15px;
     }
-
-    .moon {
-        width: 4vw;
-        height: 4vw;
-        left: 5vw;
-        top: 5vh;
+    .nav-button {
+        font-size: 12px;
+        padding: 6px 10px;
+        white-space: normal;
     }
 }
 
 @media (max-width: 480px) {
-    .about-me, .past-works, .prices-for-works, .welcome-page  {
-        font-size: 3vw;
-        width: 70%;
-        text-align: center;
-        right: 50%;
-        transform: translateX(50%);
-        top: auto;
+    .nav-buttons-container {
+        gap: 6px;
     }
+    .nav-button {
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 12px;
+    }
+}
 
+/* Moon icon adjustments for responsiveness */
+.moon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: linear-gradient(to right, rgb(255, 217, 134), rgb(250, 172, 99));
+    border-radius: 50%;
+    box-shadow: 0 0 15px 1px rgba(255, 195, 65, 0.548);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
     .moon {
-        width: 5vw;
-        height: 5vw;
-        left: 5vw;
-        top: 4vh;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .moon {
+        width: 20px;
+        height: 20px;
+        left: 15px;
+        top: 15px;
     }
 }
 
@@ -356,4 +405,11 @@ body {
         transform: scale(1);
         opacity: 0.8;
     }
+}
+@media (max-width: 480px) {
+    .nav-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
 }
