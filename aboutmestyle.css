@@ -1,153 +1,226 @@
-/* style.css */
+/* Base Styles */
 body {
-    background: linear-gradient(135deg, #161616 0%, #2b2a2a 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
     font-family: 'Montserrat', sans-serif;
-    color: #fff;
-    overflow: hidden;
-    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #161616 0%, #2b2a2a 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
+/* Font Faces */
 @font-face {
     font-family: 'MunikaHeavy'; 
     src: url('fonts/munika-heavy.otf') format('opentype'); 
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'MunikaMedium'; 
     src: url('fonts/munika-regular.otf') format('opentype'); 
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'MunikaLight'; 
     src: url('fonts/munika-light.otf') format('opentype'); 
-    font-weight: normal;
-    font-style: normal;
 }
 
-/* Moon icon */
+/* Header */
+.portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.portfolio-logo {
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Moon Icon */
 .moon {
-    width: 1vw;
-    height: 1vw;
-    position: absolute;
-    left: 3vw;
-    top: 4.5vh;
+    width: 30px;
+    height: 30px;
     background: linear-gradient(to right, rgb(255, 217, 134), rgb(250, 172, 99));
     border-radius: 50%;
-    box-shadow: 0 0 1.5vw 0.1vw rgba(255, 195, 65, 0.548);
+    box-shadow: 0 0 15px 1px rgba(255, 195, 65, 0.548);
     animation: pulse 2s infinite ease-in-out;
 }
 
-/* Navigation buttons */
-.about-me, .past-works, .prices-for-works {
+/* Main Content */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 40px;
+}
+
+.text-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.image-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Text Elements */
+.about-title {
+    font-size: clamp(24px, 5vw, 42px);
+    font-family: 'MunikaHeavy', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.about-description {
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.6;
+    font-family: 'MunikaLight', sans-serif;
+    margin-bottom: 30px;
+}
+
+.about-description p {
+    margin-bottom: 15px;
+}
+
+.signature {
+    font-size: clamp(12px, 1.5vw, 14px);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 30px;
+}
+
+/* Navigation */
+.portfolio-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-buttons-container {
     position: absolute;
+    top: 0px;
+    right: 320px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    z-index: 10;
+}
+
+.nav-button {
     background: linear-gradient(to right, rgba(223, 167, 46, 0), rgba(250, 172, 99, 0));
     color: #ffffff;
-    border-radius: 1.5vw;
-    border: 0.1vw solid rgb(255, 194, 123);
-    box-shadow: 0 0 2vw 0.5vw rgb(122, 102, 79);
-    font-family: 'MunikaMedium', sans-serif;
+    border-radius: 15px;
+    border: 1px solid rgb(255, 194, 123);
+    box-shadow: 0 0 40px 2px rgba(122, 102, 79, 0.7);
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     text-align: center;
-    font-size: .5vw;
-    padding: .3vw 1vw;
+    font-size: 12px;
+    padding: 8px 30px;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    z-index: 3;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-/* Positions (converted to vw for responsiveness) */
-.about-me {
-    right: 31.5vw;
-    top: 7vh;
+.nav-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px rgba(122, 102, 79, 0.9);
 }
 
-.past-works {
-    right: 25vw;
-    top: 7vh;
-}
-
-.prices-for-works {
-    right: 20vw;
-    top: 7vh;
-}
-
-.welcome-page {
-    right: 20vw;
-    top: 7vh;
-}
-
-.about-me:hover, .past-works:hover, .prices-for-works:hover .home-page:hover {
-    transform: scale(1.1);
-}
-
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
-    .about-me, .past-works, .prices-for-works, .welcome-page {
-        font-size: 1.8vw;
-        padding: 0.8vw 1.5vw;
+    .nav-buttons-container {
+        gap: 12px;
     }
-
-    .moon {
-        width: 3vw;
-        height: 3vw;
-        left: 5vw;
-        top: 6vh;
+    .nav-button {
+        font-size: 13px;
+        padding: 7px 12px;
     }
 }
 
 @media (max-width: 768px) {
-    .about-me, .past-works, .prices-for-works, .welcome-page  {
-        font-size: 2vw;
-        padding: 1vw 2vw;
+    .nav-buttons-container {
+        position: static;
+        justify-content: center;
+        margin: 15px auto;
+        padding: 0 15px;
     }
-
-    .moon {
-        width: 4vw;
-        height: 4vw;
-        left: 5vw;
-        top: 5vh;
+    .nav-button {
+        font-size: 12px;
+        padding: 6px 10px;
+        white-space: normal;
     }
 }
 
 @media (max-width: 480px) {
-    .about-me, .past-works, .prices-for-works, .welcome-page  {
-        font-size: 3vw;
-        width: 70%;
-        text-align: center;
-        right: 50%;
-        transform: translateX(50%);
-        top: auto;
+    .nav-buttons-container {
+        gap: 6px;
     }
-
-    .moon {
-        width: 5vw;
-        height: 5vw;
-        left: 5vw;
-        top: 4vh;
+    .nav-button {
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 12px;
     }
 }
 
-/* Pulse Animation */
+/* Animations */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.8;
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        padding: 40px;
     }
-    50% {
-        transform: scale(1.1);
-        opacity: 1;
+    
+    .text-content {
+        width: 50%;
     }
-    100% {
-        transform: scale(1);
-        opacity: 0.8;
+    
+    .image-container {
+        width: 45%;
+    }
+    
+    .portfolio-navigation {
+        justify-content: flex-end;
+        padding: 20px 40px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .about-content {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-navigation {
+        gap: 10px;
+    }
+    
+    
+    .moon {
+        width: 20px;
+        height: 20px;
     }
 }
