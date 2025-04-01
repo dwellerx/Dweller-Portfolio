@@ -335,22 +335,32 @@ body {
     box-shadow: 0 0 15px 5px rgba(122, 102, 79, 0.9);
 }
 @media (max-width: 1024px) {
-    
     .nav-buttons-container {
         position: relative;
-        top: auto;
+        top: -1020px; 
         right: auto;
         justify-content: center;
         margin: 15px auto;
         padding: 0 15px;
     }
-
 }
+
 
 @media (max-width: 768px) {
     .nav-button {
         font-size: 13px;
         padding: 7px 12px;
+    }
+    .nav-buttons-container {
+        position: relative;
+        top: -10px; 
+        right: auto;
+        justify-content: center;
+        margin: 15px auto;
+        padding: 0 15px;
+    }
+    .portfolio-image {
+        width: 0%;
     }
 }
 
@@ -364,7 +374,6 @@ body {
         gap: 6px;
     }
 }
-
 /* Moon icon adjustments for responsiveness */
 .moon {
     width: 30px;
