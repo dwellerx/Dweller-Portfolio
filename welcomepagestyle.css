@@ -418,10 +418,3 @@ body {
         opacity: 0.8;
     }
 }
-@media (max-width: 480px) {
-    .nav-btn {
-        padding: 6px 12px;
-        font-size: 12px;
-    }
-    
-}
